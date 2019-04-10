@@ -1,5 +1,4 @@
 FROM alpine:edge
-MAINTAINER Xueshan Feng <sfeng@stanford.edu>
 
 RUN apk --no-cache add \ 
       bash \
@@ -14,7 +13,8 @@ RUN apk --no-cache add \
       pip install --upgrade pip awscli s3cmd && \
       mkdir /root/.aws
 
+RUN curl -o aws-iam-authenticator \
+      https://amazon-eks.s3-us-west-2.amazonaws.com/1.10.3/2018-07-26/bin/linux/amd64/aws-iam-authenticator \
+      && chmod +x ./aws-iam-authenticator \
+      && cp ./aws-iam-authenticator /usr/local/bin/
 COPY get-metadata /usr/local/bin/get-metadata
-
-# Expose data volume
-VOLUME /apps
