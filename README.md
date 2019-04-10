@@ -5,7 +5,7 @@
 
 An AWS CLI tool in Docker container to be used in your CI/CD pipelines.
 
-This repo triggers auto-build and push images to [Docker Hub](https://dockerhub.com/r/mendrugory/awscli).
+This repo triggers auto-build and push images to [Docker Hub](https://hub.docker.com/r/mendrugory/awscli).
 
 > You must have an AWS account with access to the SDK.
 
