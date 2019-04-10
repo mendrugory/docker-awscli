@@ -2,8 +2,7 @@ sudo: required
 services:
   - docker
 script:
-  - docker build -t awscli .
+  - docker build -t $DOCKER_USER/awscli .
 after_success:
   - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-  - docker tag awscli $DOCKER_USER/awscli
   - docker push $DOCKER_USER/awscli
